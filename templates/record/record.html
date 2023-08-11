@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="card">
+        <h2 class="card-header fw-bold">
+            {{ record.first_name.title }} {{ record.last_name.title }}
+        </h2>
+        <div class="card-body">
+            <h4 class="card-title">All informations</h4>
+            <p class="card-text">
+                <strong>ID: </strong>{{ record.id }}<br/>
+                <strong>First Name: </strong>{{ record.first_name }}<br/>
+                <strong>Last Name: </strong>{{ record.last_name }}<br/>
+                <strong>Email: </strong>{{ record.email }}<br/>
+                <strong>Phone: </strong>{{ record.phone }}<br/>
+                <strong>Address: </strong>{{ record.address }}<br/>
+                <strong>City: </strong>{{ record.city }}<br/>
+                <strong>State: </strong>{{ record.state }}<br/>
+                <strong>Zipcode: </strong>{{ record.zipcode }}<br/>
+                <strong>Created At: </strong>{{ record.created_at }}<br/>
+            </p>
+        </div>
+    </div>
+    <div class="my-3">
+        <a href="{% url 'home' %}" class="btn btn-secondary" style="width: 150px;">Go Back</a>
+        <a href="{% url 'delete_redord' record.pk %}" class="btn btn-danger"  style="width: 150px;">Delete</a>
+        <a href="{% url 'update_redord' record.id %}" class="btn btn-warning"  style="width: 150px;">Update</a>
+    </div>
+
+{% endblock content %}
